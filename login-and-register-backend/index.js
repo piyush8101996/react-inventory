@@ -7,7 +7,7 @@ const cors = require('cors');
 
 env.config()
 app.use(cors());
-
+//app.use(express.urlencoded())
 //database connection using mongoose
 
 mongoose.connect(

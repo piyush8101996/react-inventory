@@ -7,7 +7,7 @@ const registeruser = async (req, res) => {
         console.log(Register, "all user list")
         const existinguser = await Register.findOne({ email: req.body.email })
         if (existinguser) {
-            console.log("existing user",existinguser)
+            console.log("existing user", existinguser)
             res.status(400)
             throw new Error({ msg: "Email already exists" });
         } else {
@@ -15,13 +15,16 @@ const registeruser = async (req, res) => {
                 fullname: req.body.fullname,
                 email: req.body.email,
                 password: req.body.password,
+                mobileNo: req.body.mobileNo,
+                phonNo: req.body.phonNo,
+                address: req.body.address
             })
             console.log(user)
             user.save((err) => {
                 if (err) {
                     res.send(err)
                 } else {
-                    res.status(200).send({msg:"user created successfully"})
+                    res.status(200).send({ msg: "user created successfully" })
                 }
             })
 
@@ -33,5 +36,6 @@ const registeruser = async (req, res) => {
     }
 
 }
+
 
 module.exports = { registeruser }

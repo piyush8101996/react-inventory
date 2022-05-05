@@ -28,7 +28,7 @@ const LoginPage = ({setUser}) => {
             axios.post("http://localhost:4000/login", loginuser)
     
                .then((res)=>{
-                console.log(JSON.parse(localStorage.getItem("userInfo")));        
+               // console.log(JSON.parse(localStorage.getItem("userInfo")));        
                 console.log("user login succesfully",res.data)
                     // setUser(res.data)
                     localStorage.setItem('userInfo', JSON.stringify(res.data.email))

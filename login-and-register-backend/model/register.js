@@ -6,6 +6,9 @@ const registeruser=  mongoose.Schema({
     fullname:String,
     email:String,
     password:String,
+    mobileNo:String,
+    phoneNo:String,
+    address:String
 })
 
 //creating collection for registe
