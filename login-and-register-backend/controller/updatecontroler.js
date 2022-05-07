@@ -38,7 +38,7 @@ const updateUser=async (req,res)=>{
    // console.log(email)
     try{
         console.log(user)
-        const update=await Register.updateOne({email:email},{$set:user})
+        const update=await Register.updateOne({email:"ravi123@gmail.com"},{$set:user})
         console.log(req.body)
         res.send(req.body.email)
     }

@@ -54,8 +54,8 @@ const User = () => {
             formData.append("phoneNo",user.phoneNo)
             formData.append("address",user.address)
            // var options = { content: formData };
-           console.log("....formData",formData)
-            axios.post(`http://localhost:4000/updateprofile/${email}`,{formData})
+           
+             axios.post(`http://localhost:4000/updateprofile/${email}`,formData)
             .then((res)=>{
              localStorage.setItem('userInfo', JSON.stringify(res.data))
                console.log(res.data)
